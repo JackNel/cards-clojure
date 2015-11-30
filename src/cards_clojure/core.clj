@@ -24,5 +24,5 @@
 (defn -main [& args]
    (let [deck (create-deck)
          hands (create-hands deck)
-         hand (filter flush? hands)]
+         hands (filter flush? hands)]
      (println (count hands))))
