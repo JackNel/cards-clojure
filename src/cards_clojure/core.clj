@@ -5,6 +5,7 @@
 (def ranks (range 1 14))
 (def rank-names {1 :ace, 11 :jack, 12 :queen, 13 :king})
 
+
 (defn create-deck []
   (set (for [suit suits
              rank ranks]
@@ -20,6 +21,17 @@
 
 (defn flush? [hand]
   (= 1 (count (set (map :suit hand)))))
+
+(defn straight? [hand]
+  (and (= (+ 3 (apply min (map :rank hand))) (apply max (map :rank hand)))
+       (= 4 (count (set (map :rank hand))))
+       (not= 1 (count (set (map :suit hand))))))
+
+(defn straight-flush? [hand]
+  (and (= (+ 3 (apply min (map :rank hand))) (apply max (map :rank hand)))
+        (= 4 (count (set (map :rank hand))))
+        (= 1 (count (set (map :suit hand))))))
+
 
 (defn -main [& args]
   (time (let [deck (create-deck)
