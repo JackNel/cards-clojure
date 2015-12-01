@@ -84,12 +84,35 @@
                :rank 2}
               {:suit :diamonds
                :rank 2}
-              {:suit :spades
-               :rank 2}
               {:suit :hearts
+               :rank 2}
+              {:suit :spades
                :rank 4}})
 
 (deftest four-of-a-kind-test
   (testing "four-of-a-kind? returns true if hand is a four of a kind"
     (is (= true (four-of-a-kind? hand-7)))
     (is (= false (four-of-a-kind? hand-8)))))
+
+(def hand-9 #{{:suit :clubs
+               :rank 5}
+              {:suit :spades
+               :rank 5}
+              {:suit :diamonds
+               :rank 5}
+              {:suit :hearts
+               :rank 2}})
+
+(def hand-10 #{{:suit :clubs
+               :rank 2}
+              {:suit :diamonds
+               :rank 2}
+              {:suit :hearts
+               :rank 2}
+              {:suit :spades
+               :rank 2}})
+
+(deftest three-of-a-kind-test
+  (testing "three-of-a-kind? returns true if hand is a three of a kind"
+    (is (= true (three-of-a-kind? hand-9)))
+    (is (= false (three-of-a-kind? hand-10)))))

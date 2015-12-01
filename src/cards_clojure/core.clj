@@ -36,7 +36,10 @@
   (= 1 (count (set (map :rank hand)))))
 
 (defn three-of-a-kind? [hand]
-  )
+  (and (= 2 (count (set (map :rank hand))))
+       (= 3 (apply max (map val (frequencies (map :rank hand)))))))
+
+dd "three"
 
 
 (defn -main [& args]
