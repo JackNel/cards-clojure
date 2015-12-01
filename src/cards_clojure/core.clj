@@ -32,6 +32,12 @@
         (= 4 (count (set (map :rank hand))))
         (= 1 (count (set (map :suit hand))))))
 
+(defn four-of-a-kind? [hand]
+  (= 1 (count (set (map :rank hand)))))
+
+(defn three-of-a-kind? [hand]
+  )
+
 
 (defn -main [& args]
   (time (let [deck (create-deck)

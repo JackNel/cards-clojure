@@ -71,3 +71,25 @@
     (is (= true (straight-flush? hand-5)))
     (is (= false (straight-flush? hand-6)))))
 
+(def hand-7 #{{:suit :clubs
+               :rank 5}
+              {:suit :spades
+               :rank 5}
+              {:suit :diamonds
+               :rank 5}
+              {:suit :hearts
+               :rank 5}})
+
+(def hand-8 #{{:suit :clubs
+               :rank 2}
+              {:suit :diamonds
+               :rank 2}
+              {:suit :spades
+               :rank 2}
+              {:suit :hearts
+               :rank 4}})
+
+(deftest four-of-a-kind-test
+  (testing "four-of-a-kind? returns true if hand is a four of a kind"
+    (is (= true (four-of-a-kind? hand-7)))
+    (is (= false (four-of-a-kind? hand-8)))))
