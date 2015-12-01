@@ -5,7 +5,6 @@
 (def ranks (range 1 14))
 (def rank-names {1 :ace, 11 :jack, 12 :queen, 13 :king})
 
-
 (defn create-deck []
   (set (for [suit suits
              rank ranks]
@@ -43,7 +42,6 @@
   (and (= 2 (count (set (map :rank hand))))
        (= 2 (apply max (map val (frequencies (map :rank hand)))))
        (= 2 (apply min (map val (frequencies (map :rank hand)))))))
-
 
 (defn -main [& args]
   (time (let [deck (create-deck)
