@@ -116,3 +116,26 @@
   (testing "three-of-a-kind? returns true if hand is a three of a kind"
     (is (= true (three-of-a-kind? hand-9)))
     (is (= false (three-of-a-kind? hand-10)))))
+
+(def hand-11 #{{:suit :clubs
+               :rank 5}
+              {:suit :spades
+               :rank 5}
+              {:suit :diamonds
+               :rank 2}
+              {:suit :hearts
+               :rank 2}})
+
+(def hand-12 #{{:suit :clubs
+                :rank 2}
+               {:suit :diamonds
+                :rank 2}
+               {:suit :hearts
+                :rank 2}
+               {:suit :spades
+                :rank 2}})
+
+(deftest two-pair-test
+  (testing "two-pair? returns true if hand is a two pair"
+    (is (= true (two-pair? hand-11)))
+    (is (= false (two-pair? hand-12)))))

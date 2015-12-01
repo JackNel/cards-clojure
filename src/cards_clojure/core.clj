@@ -39,7 +39,10 @@
   (and (= 2 (count (set (map :rank hand))))
        (= 3 (apply max (map val (frequencies (map :rank hand)))))))
 
-dd "three"
+(defn two-pair? [hand]
+  (and (= 2 (count (set (map :rank hand))))
+       (= 2 (apply max (map val (frequencies (map :rank hand)))))
+       (= 2 (apply min (map val (frequencies (map :rank hand)))))))
 
 
 (defn -main [& args]
