@@ -122,9 +122,9 @@
               {:suit :spades
                :rank 5}
               {:suit :diamonds
-               :rank 2}
+               :rank :jack}
               {:suit :hearts
-               :rank 2}})
+               :rank :jack}})
 
 (def hand-12 #{{:suit :clubs
                 :rank 2}
